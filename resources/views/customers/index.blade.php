@@ -66,13 +66,15 @@
                     <a href="#" class="btn btn-danger col-12">Delete</a>                    
                 </td>             
               </tr>
-              @endforeach
-                       
+              @endforeach               
            
 
             </tbody>
+           
           </table>
-
+          
+          <div class="div mt-2">{{$customer->links()}}</div>
+          
 
     </div>
   </div>
