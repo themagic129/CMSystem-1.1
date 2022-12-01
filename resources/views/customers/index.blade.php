@@ -26,7 +26,7 @@
 
 <div class="card col-12">
     <div class="card-header">  
-    <a href="{{route('customers.create')}}" class="btn btn-primary">Add New Customer</a>
+    <a href="{{route('customers.create')}}" class="btn btn-primary">Add New Custome</a>
        
     
     </div>
