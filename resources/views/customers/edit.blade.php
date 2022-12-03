@@ -7,7 +7,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Create new Customer</h1>
+    <h1>Update Customer</h1>
 @stop
 
 @section('content')
@@ -33,15 +33,16 @@
     </div>
 @endif
       
-        <form method="POST" action="{{route('customers.store')}}">
-   
+
+        <form method="POST" action="{{route('customers.update',$customer->id)}}">
+        @method('PUT')
          @csrf
 
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" id="name" name="nombre">             
+                        <input type="text" class="form-control" placeholder="Name" id="name" name="nombre" value="{{$customer->nombre}}">             
                       </div>                    
             </div>
 
@@ -49,7 +50,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label for="lastname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="apellido">             
+                        <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="apellido" value="{{$customer->apellido}}">             
                       </div>
                 </div>
               </div>
@@ -58,7 +59,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label for="documentid" class="form-label">Document ID</label>
-                        <input type="text" class="form-control" placeholder="Document ID" id="documentid" name="cedula">             
+                        <input type="text" class="form-control" placeholder="Document ID" id="documentid" name="cedula" value="{{$customer->cedula}}">             
                       </div>                    
             </div>
 
@@ -66,7 +67,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Phone</label>
-                        <input type="text" class="form-control" placeholder="Phone" id="telefono" name="telefono">             
+                        <input type="text" class="form-control" placeholder="Phone" id="telefono" name="telefono" value="{{$customer->telefono}}">             
                       </div>
                 </div>
               </div>
@@ -75,13 +76,13 @@
                 <div class="col">
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Address</label>
-                        <input type="text" class="form-control" placeholder="Av. Ms. Shallow #34" id="direccion" name="direccion">             
+                        <input type="text" class="form-control" placeholder="Av. Ms. Shallow #34" id="direccion" name="direccion" value="{{$customer->direccion}}">             
                       </div>                    
             </div>
             <div class="col">                 
                     
                 <select class="form-control" style="margin-top: 32px" aria-label=".form-select-lg example" name="status">
-                    <option selected disabled>Customer Status</option>
+                    
                     <option value="activo">Active</option>
                     <option value="inactivo">Inactive</option>                 
                   </select>        

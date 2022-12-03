@@ -26,7 +26,7 @@
 
 <div class="card col-12">
     <div class="card-header">  
-    <a href="{{route('customers.create')}}" class="btn btn-primary">Add New Custome</a>
+    <a href="{{route('customers.create')}}" class="btn btn-primary">Add New Customer</a>
        
     
     </div>
@@ -60,12 +60,14 @@
                <td>{{$custome->status}}</td>             
                
                 <td>
-                    <a href="#" class="btn btn-success col-12">Edit</a>                                
+                    <a href="{{route('customers.edit', $custome->id)}}" class="btn btn-success col-12">Edit</a>                                
                 </td>
                 <td>
-                    <a href="#" class="btn btn-danger col-12">Delete</a>                    
+                    <a href="" data-target="#modal-delete-{{$custome->id}}" data-toggle="modal" class="btn btn-danger ml-2">Delete</a>
+                                   
                 </td>             
               </tr>
+              @include('customers.destroy')
               @endforeach               
            
 
