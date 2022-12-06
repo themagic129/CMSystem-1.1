@@ -33,13 +33,13 @@
     <div class="card-body">
         
         <table class="table table-bordered text-center">
-            <thead class="table-dark">
+            <thead class="table-dark text-nowrap">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Document ID</th>
-                <th scope="col-4">Address</th>
+                <th scope="col">Address</th>
                 <th scope="col-4">Phone</th>
                 <th scope="col-4">Status</th>
                 <th scope="col-4">Edit</th>

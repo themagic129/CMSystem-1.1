@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $customer = DB::table('customers')->paginate(4);
+        $customer = DB::table('customers')->paginate(5);
 
         $count= DB::table('customers')->count();
 

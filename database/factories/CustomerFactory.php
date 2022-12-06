@@ -1,11 +1,7 @@
 <?php
 
-namespace Database\Factories\Models;
-use App\Models\Customer;
-use Illuminate\Support\Facades\Hash;
+namespace Database\Factories;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Seeder;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,11 +12,17 @@ class CustomerFactory extends Factory
      *
      * @return array
      */
-    public function run()
+    public function definition()
     {
-       Customer::factory()
-       ->count(50)
-       ->hasCustomer(1)
-       ->create();
+        return [
+            'nombre' => $this->faker->name(),
+            'apellido' => $this->faker->lastName(),
+            'cedula' => $this->faker->creditCardNumber(),
+            'telefono' => $this->faker->phoneNumber(),
+            'direccion' => $this->faker->address(),            
+            'status' => $this->faker->randomElement(['activo','inactivo']),
+            'email_verified_at' =>now(),
+           
+        ];
     }
 }

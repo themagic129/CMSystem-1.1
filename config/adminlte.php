@@ -315,7 +315,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'Customers',
-            'url'  => 'customers',
+            'url'  => 'home',
             'label'       => 4,
             'icon' => 'fas fa-duotone fa-users',
             'label_color' => 'success',
